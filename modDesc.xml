@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="74">
+
+    <author>loki_79</author>
+    <version>1.0.0.0</version>
+	
+    <title>
+        <en>Tip Anywhere</en>
+		<de></de>
+		<fr></fr>
+    </title>
+	
+    <description>
+<en><![CDATA[This mod is primarily to allow a player to tip and shovel loose fill types anywhere on the map, including on NPC and unowned land.  There are further settings in the general options page to allow bailers, tedders, windrowers, forage wagons and mowers to operate on unowned land.
+]]>
+</en>
+
+<de><![CDATA[
+]]>
+</de>
+
+<fr><![CDATA[
+]]>
+</fr>
+    </description>
+	
+	<multiplayer supported="true" />
+	<iconFilename>icon_TipAnywhere.dds</iconFilename>
+	<extraSourceFiles>
+        <sourceFile filename="TipAnywhere.lua" />
+    </extraSourceFiles>
+	
+	<l10n filenamePrefix="language/l10n" />
+
+</modDesc>
