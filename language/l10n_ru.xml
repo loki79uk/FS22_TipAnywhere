@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-    <translationContributors>nagor</translationContributors>
 <l10n>
+	<translationContributors>nagor</translationContributors>
 	<texts>
 		<text name="menu_TipAnywhere_TITLE" text="TIP ANYWHERE"/>
 		
