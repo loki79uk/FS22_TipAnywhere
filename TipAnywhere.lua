@@ -3,6 +3,8 @@
 -- ============================================================= --
 TipAnywhere = {}
 addModEventListener(TipAnywhere)
+
+TipAnywhere.CONTROLS = {}
 TipAnywhere.tip = true
 TipAnywhere.shovel = true
 TipAnywhere.workAreas = {
@@ -130,7 +132,7 @@ function TipAnywhere.readSettings()
 				local value = getXMLBool(xmlFile, xmlSettingKey .. "#value") or false
 				TipAnywhere.setValue(id, value)
 				
-				if hasXMLProperty(xmlFile, xmlSettingKey) then
+				if g_currentMission:getIsServer() and hasXMLProperty(xmlFile, xmlSettingKey) then
 					TipAnywhere.insertMenuItem(id)
 					return true
 				end
@@ -158,9 +160,11 @@ function TipAnywhere:onMenuOptionChanged(state, menuOption)
 	local value = TipAnywhere.OPTION.values[state]
 	
 	if value ~= nil then
-		print("SET " .. id .. " = " .. tostring(value))
+		--print("SET " .. id .. " = " .. tostring(value))
 		TipAnywhere.setValue(id, value)
 	end
+	
+	ToggleSettingEvent.sendEvent(id, value)
 	
 	TipAnywhere.writeSettings()
 end
@@ -189,6 +193,8 @@ function TipAnywhere.addMenuOption(id, original)
 	toolTip:setText(g_i18n:getText("tooltip_tipanywhere_" .. id))
 	menuOption:setTexts({unpack(options)})
 	menuOption:setState(TipAnywhere.getStateIndex(id))
+	
+	TipAnywhere.CONTROLS[id] = menuOption
 
 	return menuOption
 end
@@ -265,3 +271,18 @@ function TipAnywhere:loadMap(name)
 	TipAnywhere.readSettings()
 	TipAnywhere.registerTipAnywhereFunctions()
 end
+
+InGameMenuGameSettingsFrame.onFrameOpen = Utils.appendedFunction(InGameMenuGameSettingsFrame.onFrameOpen, function()
+	
+	local isAdmin = g_currentMission:getIsServer() or g_currentMission.isMasterUser
+	
+	for _, id in pairs(TipAnywhere.menuItems) do
+	
+		local menuOption = TipAnywhere.CONTROLS[id]
+		menuOption:setState(TipAnywhere.getStateIndex(id))
+	
+		menuOption:setDisabled(not isAdmin)
+
+	end
+end)
+source(g_currentModDirectory .. 'ToggleSettingEvent.lua')
