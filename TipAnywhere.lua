@@ -162,10 +162,9 @@ function TipAnywhere:onMenuOptionChanged(state, menuOption)
 	if value ~= nil then
 		--print("SET " .. id .. " = " .. tostring(value))
 		TipAnywhere.setValue(id, value)
+		ToggleSettingEvent.sendEvent(id, value)
 	end
-	
-	ToggleSettingEvent.sendEvent(id, value)
-	
+
 	TipAnywhere.writeSettings()
 end
 
@@ -285,4 +284,20 @@ InGameMenuGameSettingsFrame.onFrameOpen = Utils.appendedFunction(InGameMenuGameS
 
 	end
 end)
+
 source(g_currentModDirectory .. 'ToggleSettingEvent.lua')
+
+-- SEND SETTINGS TO CLIENT:
+FSBaseMission.sendInitialClientState = Utils.appendedFunction(FSBaseMission.sendInitialClientState,
+function(self, connection, user, farm)
+
+	for _, id in pairs(TipAnywhere.menuItems) do
+	
+		local value = TipAnywhere.getValue(id)
+		if value ~= nil then
+			ToggleSettingEvent.sendEvent(id, value)
+		end
+		
+	end
+	
+end)
