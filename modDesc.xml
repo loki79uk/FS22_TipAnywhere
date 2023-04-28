@@ -6,20 +6,20 @@
 	
     <title>
         <en>Tip Anywhere</en>
-		<de></de>
-		<fr></fr>
+		<de>Überall Abladen</de>
+		<fr>Décharger Partout</fr>
     </title>
 	
     <description>
-<en><![CDATA[This mod is primarily to allow a player to tip and shovel loose fill types anywhere on the map, including on NPC and unowned land.  There are further settings in the general options page to allow bailers, tedders, windrowers, forage wagons and mowers to operate on unowned land.
+<en><![CDATA[This mod allows all players to tip and shovel loose fill types anywhere on the map, including on NPC and unowned land.  There are further settings in the general options page that allow bailers, tedders, windrowers, forage wagons and mowers to operate on unowned land.
 ]]>
 </en>
 
-<de><![CDATA[
+<de><![CDATA[Dieser Mod erlaubt es allen Spielern lose Schüttgüter überall auf der Karte abzukippen und aufzunehmen, auch auf NPC- und unbesetztem Land. Es gibt weitere Einstellungen auf der Seite mit den allgemeinen Optionen, die es erlauben dass Ballenpressen, Wender, Schwader, Ladewagen und Mähwerke ebenfalls auf nicht eigenem Land arbeiten.
 ]]>
 </de>
 
-<fr><![CDATA[
+<fr><![CDATA[Ce mod permet à tous les joueurs de déverser et de ramasser des matériaux en vrac n'importe où sur la carte, y compris sur des terres non occupées ou appartenant à des PNJ. Il existe d'autres paramètres sur la page des options générales qui permettent aux presses à balles, aux faneuses, aux andaineurs, aux autochargeuses et aux faucheuses de fonctionner également sur des terres non possédées.
 ]]>
 </fr>
     </description>
