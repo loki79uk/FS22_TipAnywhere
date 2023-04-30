@@ -266,7 +266,7 @@ function TipAnywhere.registerTipAnywhereFunctions()
 end
 
 function TipAnywhere:loadMap(name)
-	print("Loaded Mod: 'TIP ANYWHERE'")
+	--print("Loaded Mod: 'TIP ANYWHERE'")
 	TipAnywhere.readSettings()
 	TipAnywhere.registerTipAnywhereFunctions()
 end
