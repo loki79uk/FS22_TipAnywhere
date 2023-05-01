@@ -2,7 +2,7 @@
 <l10n>
 	<translationContributors>nagor</translationContributors>
 	<texts>
-		<text name="menu_TipAnywhere_TITLE" text="TIP ANYWHERE"/>
+		<text name="menu_TipAnywhere_TITLE" text="Действовать везде"/>
 		
 		<text name="setting_tipanywhere_BALER" text="Тюковка"/>
 		<text name="tooltip_tipanywhere_BALER" text="Разрешить пресс-подборщикам работать на чужой земле."/>
