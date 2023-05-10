@@ -48,22 +48,10 @@ TipAnywhere.OPTION = {
 	}
 }
 
--- HELPER FUNCTIONS
-function TipAnywhere.insertMenuItem(id)
 
-	local function tableContainsValue(container, id)
-		for k, v in pairs(container) do
-			if v == id then
-				return true
-			end
-		end
-		return false
-	end
-	
-	if not tableContainsValue(TipAnywhere.menuItems, id) then
-		table.insert(TipAnywhere.menuItems, id)
-	end
-end
+-- HELPER FUNCTIONS
+local inGameMenu = g_gui.screenControllers[InGameMenu]
+local settingsGame = inGameMenu.pageSettingsGame
 
 function TipAnywhere.setValue(id, value)
 	TipAnywhere.workAreas[id] = value
@@ -83,6 +71,77 @@ function TipAnywhere.getStateIndex(id)
 	end
 	return TipAnywhere.OPTION.default
 end
+
+function TipAnywhere.addMenuOption(id, original)
+	
+	local original = original or settingsGame.checkDirt
+	local callback = "onMenuOptionChanged"
+
+	local options = TipAnywhere.OPTION.strings
+
+	local menuOption = original:clone(settingsGame.boxLayout)
+	menuOption.target = TipAnywhere
+	menuOption.id = id
+	
+	menuOption:setCallback("onClickCallback", callback)
+	menuOption:setDisabled(false)
+
+	local setting = menuOption.elements[4]
+	local toolTip = menuOption.elements[6]
+
+	setting:setText(g_i18n:getText("setting_tipanywhere_" .. id))
+	toolTip:setText(g_i18n:getText("tooltip_tipanywhere_" .. id))
+	menuOption:setTexts({unpack(options)})
+	menuOption:setState(TipAnywhere.getStateIndex(id))
+	
+	TipAnywhere.CONTROLS[id] = menuOption
+
+	return menuOption
+end
+
+function TipAnywhere.insertMenuItem(id)
+
+	local function tableContainsValue(container, id)
+		for k, v in pairs(container) do
+			if v == id then
+				return true
+			end
+		end
+		return false
+	end
+	
+	if not tableContainsValue(TipAnywhere.menuItems, id) then
+		--print("INSERTING MENU ITEM: " .. id)
+		table.insert(TipAnywhere.menuItems, id)
+		TipAnywhere.addMenuOption(id)
+		settingsGame.boxLayout:invalidateLayout()
+	end
+end
+
+-- MENU CALLBACK
+function TipAnywhere:onMenuOptionChanged(state, menuOption)
+	
+	local id = menuOption.id
+	local value = TipAnywhere.OPTION.values[state]
+	
+	if value ~= nil then
+		--print("SET " .. id .. " = " .. tostring(value))
+		TipAnywhere.setValue(id, value)
+		ToggleSettingEvent.sendEvent(id, value)
+	end
+
+	TipAnywhere.writeSettings()
+end
+
+local title = TextElement.new()
+title:applyProfile("settingsMenuSubtitle", true)
+title:setText(g_i18n:getText("menu_TipAnywhere_TITLE"))
+settingsGame.boxLayout:addElement(title)
+
+for _, id in pairs(TipAnywhere.menuItems) do
+	TipAnywhere.addMenuOption(id)
+end
+settingsGame.boxLayout:invalidateLayout()
 
 
 -- READ/WRITE SETTINGS
@@ -153,63 +212,7 @@ function TipAnywhere.readSettings()
 	
 end
 
--- MENU CALLBACK
-function TipAnywhere:onMenuOptionChanged(state, menuOption)
-	
-	local id = menuOption.id
-	local value = TipAnywhere.OPTION.values[state]
-	
-	if value ~= nil then
-		--print("SET " .. id .. " = " .. tostring(value))
-		TipAnywhere.setValue(id, value)
-		ToggleSettingEvent.sendEvent(id, value)
-	end
-
-	TipAnywhere.writeSettings()
-end
-
-
-local inGameMenu = g_gui.screenControllers[InGameMenu]
-local settingsGame = inGameMenu.pageSettingsGame
-function TipAnywhere.addMenuOption(id, original)
-	
-	local original = original or settingsGame.checkDirt
-	local callback = "onMenuOptionChanged"
-
-	local options = TipAnywhere.OPTION.strings
-
-	local menuOption = original:clone(settingsGame.boxLayout)
-	menuOption.target = TipAnywhere
-	menuOption.id = id
-	
-	menuOption:setCallback("onClickCallback", callback)
-	menuOption:setDisabled(false)
-
-	local setting = menuOption.elements[4]
-	local toolTip = menuOption.elements[6]
-
-	setting:setText(g_i18n:getText("setting_tipanywhere_" .. id))
-	toolTip:setText(g_i18n:getText("tooltip_tipanywhere_" .. id))
-	menuOption:setTexts({unpack(options)})
-	menuOption:setState(TipAnywhere.getStateIndex(id))
-	
-	TipAnywhere.CONTROLS[id] = menuOption
-
-	return menuOption
-end
-
-local title = TextElement.new()
-title:applyProfile("settingsMenuSubtitle", true)
-title:setText(g_i18n:getText("menu_TipAnywhere_TITLE"))
-settingsGame.boxLayout:addElement(title)
-
-for _, id in pairs(TipAnywhere.menuItems) do
-	TipAnywhere.addMenuOption(id)
-end
-settingsGame.boxLayout:invalidateLayout()
-
-
-
+-- GAME FUNCTIONS
 function TipAnywhere:shovelGetCanShovelAtPosition(superFunc, shovelNode)
 	if shovelNode == nil then
 		return false
@@ -225,27 +228,32 @@ function TipAnywhere:dischargeableGetCanDischargeToLand(superFunc, dischargeNode
 end
 
 function TipAnywhere:WorkAreaGetIsAccessibleAtWorldPosition(superFunc, farmId, x, z, workAreaType)
+
+	local isAccessible, farmlandOwner, buyable = superFunc(self, farmId, x, z, workAreaType)
+	
 	local workAreaName = g_workAreaTypeManager:getWorkAreaTypeNameByIndex(workAreaType)
 	-- print("workAreaName: " .. workAreaName)
 	if TipAnywhere.workAreas[workAreaName] then
-		return true
+		isAccessible = true
 	end
 	
-	return superFunc(self, farmId, x, z, workAreaType) 
+	return isAccessible, farmlandOwner, buyable
 end
 
 MissionManager.getIsMissionWorkAllowed = Utils.overwrittenFunction(MissionManager.getIsMissionWorkAllowed,
 function(self, superFunc, farmId, x, z, workAreaType)
+
+	local isAccessible = superFunc(self, farmId, x, z, workAreaType)
+
 	local mission = self:getMissionAtWorldPosition(x, z)
 	if mission ~= nil and mission.farmId == farmId then
 		local workAreaName = g_workAreaTypeManager:getWorkAreaTypeNameByIndex(workAreaType)
 		if TipAnywhere.workAreas[workAreaName] then
-			return true
+			isAccessible = true
 		end
 	end
 	
-	return superFunc(self, farmId, x, z, workAreaType)
-	
+	return isAccessible
 end)
 
 function TipAnywhere.registerTipAnywhereFunctions()
