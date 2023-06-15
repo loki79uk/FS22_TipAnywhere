@@ -33,8 +33,8 @@
 		<text name="setting_tipanywhere_PLOW" text="Pflügen"/>
 		<text name="tooltip_tipanywhere_PLOW" text="Pflügen auf fremdem Land zulassen."/>
 		
-		<text name="setting_tipanywhere_RIDGEMARKER" text="Ridge Marking"/>
-		<text name="tooltip_tipanywhere_RIDGEMARKER" text="Allow ridge marking on unowned land."/>
+		<text name="setting_tipanywhere_RIDGEMARKER" text="Spurreißer"/>
+		<text name="tooltip_tipanywhere_RIDGEMARKER" text="Spurreißen auf fremdem Land zulassen."/>
 		
 		<text name="setting_tipanywhere_ROLLER" text="Walzen (Steine)"/>
 		<text name="tooltip_tipanywhere_ROLLER" text="Walzen von Steinen auf fremdem Land zulassen."/>
