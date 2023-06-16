@@ -1,73 +1,73 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <l10n>
 	<texts>
-		<text name="menu_TipAnywhere_TITLE" text="TIP ANYWHERE"/>
+		<text name="menu_TipAnywhere_TITLE" text="TRABALHANDO EM QUALQUER LUGAR"/>
 		
-		<text name="setting_tipanywhere_BALER" text="Baling"/>
-		<text name="tooltip_tipanywhere_BALER" text="Allow balers to operate on unowned land."/>
+		<text name="setting_tipanywhere_BALER" text="Enfardamento"/>
+		<text name="tooltip_tipanywhere_BALER" text="Permita que as enfardadeiras operem em terras sem dono."/>
 		
-		<text name="setting_tipanywhere_COMBINECHOPPER" text="Harvesting"/>
-		<text name="tooltip_tipanywhere_COMBINECHOPPER" text="Allow combine harvesters to operate on unowned land."/>
+		<text name="setting_tipanywhere_COMBINECHOPPER" text="colhendo"/>
+		<text name="tooltip_tipanywhere_COMBINECHOPPER" text="Permitir que as colheitadeiras operem em terras sem dono."/>
 		
-		<text name="setting_tipanywhere_COMBINESWATH" text="Swathing"/>
-		<text name="tooltip_tipanywhere_COMBINESWATH" text="Allow combine harvester swaths on unowned land."/>
+		<text name="setting_tipanywhere_COMBINESWATH" text="Enfaixamento"/>
+		<text name="tooltip_tipanywhere_COMBINESWATH" text="Permitir faixas de colheitadeiras em terras sem dono."/>
 		
-		<text name="setting_tipanywhere_CULTIVATOR" text="Cultivating"/>
-		<text name="tooltip_tipanywhere_CULTIVATOR" text="Allow cultivators to operate on unowned land."/>
+		<text name="setting_tipanywhere_CULTIVATOR" text="Cultivando"/>
+		<text name="tooltip_tipanywhere_CULTIVATOR" text="Permitir que os cultivadores operem em terras sem dono."/>
 		
-		<text name="setting_tipanywhere_CUTTER" text="Forage Harvesting"/>
-		<text name="tooltip_tipanywhere_CUTTER" text="Allow forage harvesters to operate on unowned land."/>
+		<text name="setting_tipanywhere_CUTTER" text="Colhendo de forragem"/>
+		<text name="tooltip_tipanywhere_CUTTER" text="Permitir que as colheitadeiras de forragem operem em terras sem dono."/>
 		
-		<text name="setting_tipanywhere_FORAGEWAGON" text="Forage Wagon"/>
-		<text name="tooltip_tipanywhere_FORAGEWAGON" text="Allow collecting loose materials with a forage wagon on unowned land."/>
+		<text name="setting_tipanywhere_FORAGEWAGON" text="Carregadores de forragem"/>
+		<text name="tooltip_tipanywhere_FORAGEWAGON" text="Permitir a coleta de materiais soltos com um carregador de forragem em terras sem dono."/>
 		
-		<text name="setting_tipanywhere_FRUITPREPARER" text="Pruning"/>
-		<text name="tooltip_tipanywhere_FRUITPREPARER" text="Allow pruning of vine crops on unowned land."/>
+		<text name="setting_tipanywhere_FRUITPREPARER" text="Poda"/>
+		<text name="tooltip_tipanywhere_FRUITPREPARER" text="Permitir a poda de plantações de videiras em terras sem dono."/>
 		
-		<text name="setting_tipanywhere_MULCHER" text="Mulching"/>
-		<text name="tooltip_tipanywhere_MULCHER" text="Allow mulchers to operate on unowned land."/>
+		<text name="setting_tipanywhere_MULCHER" text="Triturando"/>
+		<text name="tooltip_tipanywhere_MULCHER" text="Permita que os trituradores operem em terras sem dono."/>
 		
-		<text name="setting_tipanywhere_MOWER" text="Mowing"/>
-		<text name="tooltip_tipanywhere_MOWER" text="Allow mowing grass on unowned land."/>
+		<text name="setting_tipanywhere_MOWER" text="Corte de grama"/>
+		<text name="tooltip_tipanywhere_MOWER" text="Permitir o corte de grama em terrenos sem dono."/>
 		
-		<text name="setting_tipanywhere_PLOW" text="Ploughing"/>
-		<text name="tooltip_tipanywhere_PLOW" text="Allow ploughs to operate on unowned land."/>
+		<text name="setting_tipanywhere_PLOW" text="Arando"/>
+		<text name="tooltip_tipanywhere_PLOW" text="Permitir que os arados operem em terras sem dono."/>
 		
-		<text name="setting_tipanywhere_RIDGEMARKER" text="Ridge Marking"/>
-		<text name="tooltip_tipanywhere_RIDGEMARKER" text="Allow ridge marking on unowned land."/>
+		<text name="setting_tipanywhere_RIDGEMARKER" text="Marcação de cumeeira"/>
+		<text name="tooltip_tipanywhere_RIDGEMARKER" text="Permitir a marcação de cumeeira em terras sem dono."/>
 		
-		<text name="setting_tipanywhere_ROLLER" text="Stone Rolling"/>
-		<text name="tooltip_tipanywhere_ROLLER" text="Allow rollers to operate on unowned land."/>
+		<text name="setting_tipanywhere_ROLLER" text="Rolos"/>
+		<text name="tooltip_tipanywhere_ROLLER" text="Permitir que os compactadores operem em terrenos sem dono."/>
 		
-		<text name="setting_tipanywhere_SALTSPREADER" text="Salt Spreading"/>
-		<text name="tooltip_tipanywhere_SALTSPREADER" text="Allow salt spreaders to operate on unowned land."/>
+		<text name="setting_tipanywhere_SALTSPREADER" text="Espalhamento de sal"/>
+		<text name="tooltip_tipanywhere_SALTSPREADER" text="Permitir que os espalhadores de sal operem em terrenos sem dono."/>
 		
-		<text name="setting_tipanywhere_SOWINGMACHINE" text="Sowing"/>
-		<text name="tooltip_tipanywhere_SOWINGMACHINE" text="Allow sowing or planting of crops on unowned land."/>
+		<text name="setting_tipanywhere_SOWINGMACHINE" text="Semeadura"/>
+		<text name="tooltip_tipanywhere_SOWINGMACHINE" text="Permitir a semeadura ou o plantio de culturas em terras sem dono."/>
 		
-		<text name="setting_tipanywhere_SPRAYER" text="Spraying"/>
-		<text name="tooltip_tipanywhere_SPRAYER" text="Allow spraying of fertiliser or herbicide on unowned land."/>
+		<text name="setting_tipanywhere_SPRAYER" text="Pulverização	"/>
+		<text name="tooltip_tipanywhere_SPRAYER" text="Permitir a pulverização de fertilizantes ou herbicidas em terras sem dono."/>
 		
-		<text name="setting_tipanywhere_STONEPICKER" text="Stone Picking"/>
-		<text name="tooltip_tipanywhere_STONEPICKER" text="Allow stone pickers to operate on unowned land."/>
+		<text name="setting_tipanywhere_STONEPICKER" text="Recolhedores de pedra"/>
+		<text name="tooltip_tipanywhere_STONEPICKER" text="Permitir que os recolhedores de pedras operem em terras sem dono."/>
 		
-		<text name="setting_tipanywhere_STUMPCUTTER" text="Stump Cutting"/>
-		<text name="tooltip_tipanywhere_STUMPCUTTER" text="Allow stump cutters to operate on unowned land."/>
+		<text name="setting_tipanywhere_STUMPCUTTER" text="Corte de tocos"/>
+		<text name="tooltip_tipanywhere_STUMPCUTTER" text="Permitir que cortadores de tocos operem em terrenos sem dono."/>
 		
-		<text name="setting_tipanywhere_TEDDER" text="Tedding"/>
-		<text name="tooltip_tipanywhere_TEDDER" text="Allow tedders to operate on unowned land."/>
+		<text name="setting_tipanywhere_TEDDER" text="Espalhadores de Estrume"/>
+		<text name="tooltip_tipanywhere_TEDDER" text="Permitir que os espalhadores de estrume operem em terras sem dono."/>
 		
-		<text name="setting_tipanywhere_WEEDER" text="Weeding"/>
-		<text name="tooltip_tipanywhere_WEEDER" text="Allow weeders to operate on unowned land."/>
+		<text name="setting_tipanywhere_WEEDER" text="Capinar"/>
+		<text name="tooltip_tipanywhere_WEEDER" text="Permitir que os capinadores operem em terras sem dono."/>
 		
-		<text name="setting_tipanywhere_WINDROWER" text="Windrowing"/>
-		<text name="tooltip_tipanywhere_WINDROWER" text="Allow windrowers to operate on unowned land."/>
+		<text name="setting_tipanywhere_WINDROWER" text="Enleiramento"/>
+		<text name="tooltip_tipanywhere_WINDROWER" text="Permitir que os enleiradores operem em terras sem dono."/>
 		
-		<text name="setting_tipanywhere_DEFAULT" text="Default"/>
-		<text name="tooltip_tipanywhere_DEFAULT" text="Allow default work area type on unowned land."/>
+		<text name="setting_tipanywhere_DEFAULT" text="Padrão"/>
+		<text name="tooltip_tipanywhere_DEFAULT" text="Permitir o tipo de área de trabalho padrão em terras sem dono."/>
 		
-		<text name="setting_tipanywhere_AUXILIARY" text="Auxiliary"/>
-		<text name="tooltip_tipanywhere_AUXILIARY" text="Allow the auxiliary work area type on unowned land."/>
+		<text name="setting_tipanywhere_AUXILIARY" text="Auxiliar"/>
+		<text name="tooltip_tipanywhere_AUXILIARY" text="Permitir o tipo de área de trabalho auxiliar em terrenos sem dono."/>
 
     </texts>
 </l10n>

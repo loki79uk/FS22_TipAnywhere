@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="74">
+<modDesc descVersion="75">
 
     <author>loki_79</author>
     <version>1.0.0.0</version>
@@ -9,6 +9,7 @@
         <de>Überall Abladen</de>
         <fr>Travailler Partout</fr>
         <ru>Действовать Везде</ru>
+        <br>Trabalhando em qualquer lugar</br>
     </title>
 	
     <description>
@@ -23,6 +24,10 @@
 <fr><![CDATA[Ce mod permet à tous les joueurs de travailler, déverser et ramasser des matériaux en vrac n'importe où sur la carte, y compris sur des terres non possèdées ou appartenants à des PNJ. Il existe d'autres paramètres sur la page des options générales qui permettent aux presses, aux faneuses, aux andaineurs, aux autochargeuses et aux faucheuses de fonctionner également sur des terres non possédées. Des autorisations facultatives de travail sur le terrain sont également appliquées lors des missions contractuelles.
 ]]>
 </fr>
+
+<br><![CDATA[Este mod permite que todos os jogadores derrubem e removam tipos de aterro soltos em qualquer lugar do mapa, incluindo NPC e terrenos sem dono. Existem outras configurações na página de opções gerais que permitem que enfardadores, espalhadores de estrume, enleiradores, carregador de forragem e cortadores de grama operem em terrenos não proprietários. As permissões de trabalho de campo opcionais também são aplicadas durante as missões contratadas.
+]]>
+</br>
     </description>
 	
 	<multiplayer supported="true" />
