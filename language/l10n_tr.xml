@@ -5,6 +5,9 @@
 		
 		<text name="setting_tipanywhere_BALER" text="Baling"/>
 		<text name="tooltip_tipanywhere_BALER" text="Allow balers to operate on unowned land."/>
+
+		<text name="setting_tipanywhere_PELLETIZER" text="Pellet Harvesting"/>
+		<text name="tooltip_tipanywhere_PELLETIZER" text="Allow pellet harvesters to operate on unowned land."/>
 		
 		<text name="setting_tipanywhere_COMBINECHOPPER" text="Harvesting"/>
 		<text name="tooltip_tipanywhere_COMBINECHOPPER" text="Allow combine harvesters to operate on unowned land."/>
