@@ -9,6 +9,7 @@ TipAnywhere.tip = true
 TipAnywhere.shovel = true
 TipAnywhere.workAreas = {
 	['BALER'] = true,
+	['PELLETIZER'] = true,
 	['COMBINECHOPPER'] = false,
 	['COMBINESWATH'] = false,
 	['CULTIVATOR'] = false,
@@ -33,10 +34,11 @@ TipAnywhere.workAreas = {
 }
 TipAnywhere.menuItems = {
 	[1] = 'BALER',
-	[2] = 'FORAGEWAGON',
-	[3] = 'TEDDER',
-	[4] = 'WINDROWER',
-	[5] = 'MOWER'
+	[2] = 'PELLETIZER',
+	[3] = 'FORAGEWAGON',
+	[4] = 'TEDDER',
+	[5] = 'WINDROWER',
+	[6] = 'MOWER'
 }
 
 TipAnywhere.OPTION = {
